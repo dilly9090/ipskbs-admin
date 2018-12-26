@@ -75,6 +75,14 @@
                             <div class="col-md-7"><b>{{isset($data->user->sdm->kedudukan) ? ($data->user->sdm->kedudukan) : 'n/a'}}</b></div>
                         </div>
                         <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
+                            <div class="col-md-4">Dasar Penugasan</div>
+                            <div class="col-md-1 text-right">:</div>
+                            <div class="col-md-7">
+                                <b>Nomor : {{isset($data->nomor_penugasan)}}</b><br>
+                                <b>Perihal : {{isset($data->perihal_penugasan)}}</b>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
                             <div class="col-md-4">Jenis Bencana</div>
                             <div class="col-md-1 text-right">:</div>
                             <div class="col-md-7"><b>{{isset($data->jenis->jenis) ? $data->jenis->jenis : 'n/a'}}</b></div>
@@ -85,75 +93,28 @@
                             <div class="col-md-7"><b>{{date('d/m/Y',strtotime($data->waktu_kejadian))}}</b></div>
                         </div>
                         <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Lokasi Kejadian</div>
+                            <div class="col-md-4">Tanggal Assesment</div>
                             <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->lokasi_kejadian}}</b></div>
+                            <div class="col-md-7"><b>{{date('d/m/Y',strtotime($data->waktu_assement))}}</b></div>
                         </div>
+                      
                         <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
                             <div class="col-md-4">Kronologi Kejadian</div>
                             <div class="col-md-1 text-right">:</div>
                             <div class="col-md-7"><b>{{$data->kronologis}}</b></div>
                         </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Korban Terdampak</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_korban_terdampak}} Orang</b></div>
-                        </div>
+                       
                         <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
                             <div class="col-md-4">Jumlah Korban Meninggal</div>
                             <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_korban_meninggal}} Orang</b></div>
+                            <div class="col-md-7"><b>{{$data->jumlah_meninggal}} Orang</b></div>
                         </div>
                         <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
                             <div class="col-md-4">Jumlah Korban Luka</div>
                             <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_korban_luka}} Orang</b></div>
+                            <div class="col-md-7"><b>{{$data->jumlah_luka}} Orang</b></div>
                         </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Korban Anak-anak</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_korban_anak}} Orang</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Korban Dewasa</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_korban_dewasa}} Orang</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Korban Lansia</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_korban_lansia}} Orang</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Korban Disabilitas</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_korban_disabilitas}} Orang</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Rusak Berat</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_rusak_berat}} Unit</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Rusak Sedang</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_rusak_sedang}} Unit</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Rusak Ringan</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->jumlah_rusak_ringan}} Unit</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Jumlah Kerugian Lain</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->kerugian_lain}} Unit</b></div>
-                        </div>
-                        <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
-                            <div class="col-md-4">Lokasi Pengungsian</div>
-                            <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->lokasi_pengungsi}}</b></div>
-                        </div>
+                        
                     </div>  
                     <div class="col-md-5">
                         <h3>STATUS LAPORAN</h3>

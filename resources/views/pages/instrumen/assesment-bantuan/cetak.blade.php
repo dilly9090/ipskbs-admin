@@ -76,15 +76,15 @@
         
         <tr>
             <td>C</td>
-            <td>Lokasi Kejadian</td>
-            <td>:</td>
-            <td><b>{{$det->lokasi_kejadian}}</b></td>
-        </tr>
-        <tr>
-            <td>D</td>
             <td>Kronologi Kejadian</td>
             <td>:</td>
             <td><b>{{$det->kronologis}}</b></td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>Waktu Assesment</td>
+            <td>:</td>
+            <td><b>{{date('d-m-Y',strtotime($det->waktu_assement))}}</b></td>
         </tr>
         
     </table>
@@ -97,75 +97,20 @@
             <td></td>
             <td>&nbsp;</td>
         </tr>
-        <tr>
-            <td style="text-align:right">1</td>
-            <td colspan="3">Berapa jumlah Kepala Keluarga yang terkena bencana sosial ___ KK</td>
-        </tr>
         
-        <tr>
-            <td style="text-align:right">2</td>
-            <td colspan="3">Berapa jumlah korban seluruhnya : …….. orang, dengan rincian sbb;</td>
-        </tr>
         <tr>
             <td></td>
             <td>Korban Meninggal</td>
-            <td style="text-align:right"><b>{{$det->jumlah_korban_meninggal}}</b></td>
+            <td style="text-align:right"><b>{{$det->jumlah_meninggal}}</b></td>
             <td>Orang</td>
         </tr>
         <tr>
             <td></td>
             <td>Korban Luka-luka</td>
-            <td style="text-align:right"><b>{{$det->jumlah_korban_luka}}</b></td>
+            <td style="text-align:right"><b>{{$det->jumlah_luka}}</b></td>
             <td>Orang</td>
         </tr>
-        <tr>
-            <td></td>
-            <td>Korban Anak-anak</td>
-            <td style="text-align:right"><b>{{$det->jumlah_korban_anak}}</b></td>
-            <td>Orang</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Korban Dewasa</td>
-            <td style="text-align:right"><b>{{$det->jumlah_korban_dewasa}}</b></td>
-            <td>Orang</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Korban Lansia</td>
-            <td style="text-align:right"><b>{{$det->jumlah_korban_lansia}}</b></td>
-            <td>Orang</td>
-        </tr>
-        <tr>
-            <td>B</td>
-            <td>Data Korban Bangunan/Rumah</td>
-            <td></td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Jumlah Rusak Berat</td>
-            <td style="text-align:right"><b>{{$det->jumlah_rusak_berat}}</b></td>
-            <td>Unit</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Jumlah Rusak Sedang</td>
-            <td style="text-align:right"><b>{{$det->jumlah_rusak_sedang}}</b></td>
-            <td>Unit</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Jumlah Rusak Ringan</td>
-            <td style="text-align:right"><b>{{$det->jumlah_rusak_ringan}}</b></td>
-            <td>Unit</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Jumlah Kerugian Lain</td>
-            <td style="text-align:right"><b>{{$det->kerugian_lain}}</b></td>
-            <td>Unit</td>
-        </tr>
+       
     </table>
 </body>
 </html>

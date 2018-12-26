@@ -15,9 +15,9 @@
 									<a href="#"><i class="icon-stack"></i> <span>Data</span></a>
 									<ul>
 										<li class="{{strpos($path,'data-laporan')!==false ? 'active' : ''}}"><a href="{{url('data-laporan')}}">Laporan Kejadian Bencana Sosial</a></li>
-										<li class="{{$path=='data-bantuan-santuan' ? 'active' : ''}}"><a href="{{url('data-bantuan-santuan')}}">Bantuan Santunan Kematian</a></li>
-										<li class="{{$path=='data-bantuan-jaminan' ? 'active' : ''}}"><a href="{{url('data-bantuan-jaminan')}}">Bantuan Jaminan Hidup</a></li>
-										<li class="{{$path=='data-bantuan-bahan-bangunan' ? 'active' : ''}}"><a href="{{url('data-bantuan-bahan-bangunan')}}">Bantuan Bahan Bangunan</a></li>
+										<li class="{{strpos($path,'data-bantuan-santuan')!==false ? 'active' : ''}}"><a href="{{url('data-bantuan-santuan')}}">Bantuan Santunan Kematian</a></li>
+										<li class="{{strpos($path,'data-bantuan-jaminan')!==false ? 'active' : ''}}"><a href="{{url('data-bantuan-jaminan')}}">Bantuan Jaminan Hidup</a></li>
+										<li class="{{strpos($path,'data-bantuan-bahan-bangunan')!==false ? 'active' : ''}}"><a href="{{url('data-bantuan-bahan-bangunan')}}">Bantuan Bahan Bangunan</a></li>
 									</ul>
 								</li>
 								{{-- <li class="{{$path=='sebaran-peta' ? 'active' : ''}}"><a href="{{url('sebaran-peta')}}"><i class="icon-map4"></i> <span>Peta</span></a></li> --}}

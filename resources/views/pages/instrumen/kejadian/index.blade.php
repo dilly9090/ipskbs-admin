@@ -76,7 +76,7 @@
                             <th class="text-center">Nama Petugas</th>
                             <th class="text-center">Asal Instansi</th>
                             <th class="text-center">Jenis Bencana</th>
-                            <th class="text-center">Lokasi Kejadian</th>
+                            <th class="text-center">Lokasi Pengungsian</th>
                             <th class="text-center">Status Laporan</th>
                             <th>#</th>
                         </tr>
@@ -91,20 +91,42 @@
                                 <td class="text-left"><b>{{$no}}</b></td>
                                 <td class="text-left">{{$im->no_laporan}}</td>
                                 <td class="text-left">{{isset($im->user->sdm->nama_lengkap) ? ucwords($im->user->sdm->nama_lengkap) : ucwords($im->user->name)}}</td>
-                                <td class="text-left"></td>
-                                <td class="text-left"></td>
-                                <td class="text-left"></td>
-                                <td class="text-left"></td>
-                                
+                                <td class="text-left">{{isset($im->user->sdm->kedudukan) ? ($im->user->sdm->kedudukan) : 'n/a'}}</td>
+                                 <td class="text-left">{{isset($im->jenis->jenis) ? $im->jenis->jenis : 'n/a'}}</td>
+                                <td class="text-left">{{$im->lokasi}}</td>
+                                <td>
+                                    @if ($im->status==0)
+                                        <span class="label label-warning">Belum Diverifikasi</span>
+                                    @elseif ($im->status=='1')
+                                        <span class="label label-success">Laporan Lengkap & Valid</span>
+                                    @elseif ($im->status=='1b')
+                                        <span class="label label-warning">Laporan Tidak Lengkap</span>
+                                    @elseif ($im->status=='2')
+                                        <span class="label label-info">Proses Rekomendasi</span>
+                                    @elseif ($im->status=='3a')
+                                        <span class="label label-success">Disetujui</span>
+                                    @elseif ($im->status=='3c')
+                                        <span class="label label-danger">Tidak Disetujui</span>
+                                    @elseif ($im->status=='4')
+                                        <span class="label label-success">Telah Disetujui</span>
+                                    @elseif ($im->status=='4a')
+                                        <span class="label label-info">Telah DI Bayarkan</span>
+                                    @elseif ($im->status=='4b')
+                                        <span class="label label-danger">Retur</span>
+                                    @endif
+                                </td>
                                 <td>
                                     <div style="width:100px">
-                                        <a class="btn btn-xs btn-info btn-edit" data-toggle="modal" data-target="#modalubah" data-value="{{ $im->id }}">
-                                                    <i class="icon-pencil"></i>
+                                        <a class="btn btn-xs btn-success" href="{{url('data-bantuan-jaminan/'.$im->id)}}" style="padding:4px 5px !important" title="Detail Laporan">
+                                                    <i class="icon-eye"></i>
                                                 </a>
-                                        <a href="#" class="btn btn-xs btn-danger btn-delete" data-toggle="modal" data-target="#modalhapus" data-value="{{ $im->id }}">
+                                        {{-- <a class="btn btn-xs btn-info btn-edit" data-toggle="modal" data-target="#modalubah" data-value="{{ $im->id }}" style="padding:4px 5px !important">
+                                                    <i class="icon-pencil"></i>
+                                                </a> --}}
+                                        <a href="#" class="btn btn-xs btn-danger btn-delete" data-toggle="modal" data-target="#modalhapus" data-value="{{ $im->id }}" style="padding:4px 5px !important">
                                         <i class="icon-trash"></i>
                                     </a>  
-                                </div> 
+                                    </div> 
                                 </td>
                             </tr>
                             @php

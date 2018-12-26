@@ -93,7 +93,7 @@
                                 <td class="text-left">{{$im->no_laporan}}</td>
                                 <td class="text-left">{{isset($im->user->sdm->nama_lengkap) ? ucwords($im->user->sdm->nama_lengkap) : ucwords($im->user->name)}}</td>
                                 <td class="text-left">
-                                    No : {{$im->nomor_penugasa}}<br>
+                                    No : {{$im->nomor_penugasan}}<br>
                                     Perihal : {{$im->perihal_penugasan}}
                                 </td>
                                 <td class="text-left">{{date('d-m-Y',strtotime($im->waktu_kejadian))}}</td>

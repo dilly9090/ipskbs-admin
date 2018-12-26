@@ -15,4 +15,8 @@ class InstrumenAssesmentPemulian extends Model
     {
         return $this->belongsTo('App\User','id_user');
     }
+    function jenis()
+    {
+        return $this->belongsTo('App\Models\JenisBencana','id_jenis');
+    }
 }
