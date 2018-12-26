@@ -96,7 +96,7 @@
                         <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
                             <div class="col-md-4">Kronologi Kejadian</div>
                             <div class="col-md-1 text-right">:</div>
-                            <div class="col-md-7"><b>{{$data->kronologis}}</b></div>
+                            <div class="col-md-7"><b>{{$data->kronologi}}</b></div>
                         </div>
                         <div class="row" style="margin-bottom:10px;border-bottom:1px solid #eee;">
                             <div class="col-md-4">Penyebab</div>

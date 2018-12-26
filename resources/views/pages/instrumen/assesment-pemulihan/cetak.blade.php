@@ -77,7 +77,7 @@
             <td>C</td>
             <td>Kronologi Kejadian</td>
             <td>:</td>
-            <td><b>{{$det->kronologis}}</b></td>
+            <td><b>{{$det->kronologi}}</b></td>
         </tr>
 
         <tr>
