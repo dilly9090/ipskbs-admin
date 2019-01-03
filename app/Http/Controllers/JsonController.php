@@ -80,19 +80,19 @@ class JsonController extends Controller
         $data=array();
         foreach($lap1 as $k=>$v)
         {
-            $data[strtok($v->created_at,' ')][]=$v;
+            $data[strtok($v->updated_at,' ')][]=$v;
         }
         foreach($lap2 as $k=>$v)
         {
-            $data[strtok($v->created_at,' ')][]=$v;
+            $data[strtok($v->updated_at,' ')][]=$v;
         }
         foreach($lap3 as $k=>$v)
         {
-            $data[strtok($v->created_at,' ')][]=$v;
+            $data[strtok($v->updated_at,' ')][]=$v;
         }
         foreach($lap4 as $k=>$v)
         {
-            $data[strtok($v->created_at,' ')][]=$v;
+            $data[strtok($v->updated_at,' ')][]=$v;
         }
         krsort($data);
         $data2=$det=array();
