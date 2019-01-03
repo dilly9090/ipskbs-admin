@@ -50,7 +50,7 @@
                     <!-- Advanced login -->
                     
 					<div class="row" style="margin-top:-20px;">
-                        <div style="text-align:center;width:100%">
+                        <div style="text-align:center;width:100%;margin-top:-20px;">
                             <div style="" class="div-logo-kemensos">
                                 <img src="{{asset('assets/images/ipskbs.png')}}" style="width:70px;" >
                                 <div style="">
@@ -96,11 +96,11 @@
                             <div style="" class="div-logo-kemensos">
                                 <img src="{{asset('assets/images/kemensos_logo.png')}}" style="" class="logo-kemensos">
                                 <div style="">
+										<div>
+											<span style="font-size:14px;font-weight:600">Direktorat Jenderal Perlindungan Jaminan Sosial</span>
+										</div>
                                     <div>
-                                        <span style="font-size:14px;font-weight:600">Direktorat Perlindungan Sosial Korban Bencana Sosial</span>
-                                    </div>
-                                    <div>
-                                        <span style="font-size:14px;">Direktorat Jenderal Perlindungan Jaminan Sosial</span>
+                                        <span style="font-size:14px;">Direktorat Perlindungan Sosial Korban Bencana Sosial</span>
                                     </div>
                                 </div>
                             </div>

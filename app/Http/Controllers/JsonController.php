@@ -72,10 +72,10 @@ class JsonController extends Controller
 
     public function getlaporan($iduser)
     {
-        $lap1=InstrumenAssesment::select('*',DB::raw('"laporan-kematian" as jenis'))->where('id_user',$iduser)->get();
-        $lap2=InstrumenAssesmentPemulian::select('*',DB::raw('"bantuan-bahan" as jenis'))->where('id_user',$iduser)->get();
-        $lap3=InstrumenJHPKBS::select('*',DB::raw('"jaminan-hidup" as jenis'))->where('id_user',$iduser)->get();
-        $lap4=InstrumenLaporanKejadian::select('*',DB::raw('"laporan-kejadian" as jenis'))->where('id_user',$iduser)->get();
+        $lap1=InstrumenAssesment::select('*',DB::raw('"laporan-kematian" as jenis'))->where('id_user',$iduser)->orderBy('updated_at','desc')->get();
+        $lap2=InstrumenAssesmentPemulian::select('*',DB::raw('"bantuan-bahan" as jenis'))->where('id_user',$iduser)->orderBy('updated_at','desc')->get();
+        $lap3=InstrumenJHPKBS::select('*',DB::raw('"jaminan-hidup" as jenis'))->where('id_user',$iduser)->orderBy('updated_at','desc')->get();
+        $lap4=InstrumenLaporanKejadian::select('*',DB::raw('"laporan-kejadian" as jenis'))->where('id_user',$iduser)->orderBy('updated_at','desc')->get();
 
         $data=array();
         foreach($lap1 as $k=>$v)
