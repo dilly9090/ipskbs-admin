@@ -10,7 +10,7 @@ $InstrumenAssesment=\App\Models\InstrumenAssesment::all();
 							<div class="panel panel-body border-top-info text-center">
 								<h6 class="no-margin text-semibold">Lap. Kejadian Bencana Sosial</h6>
 								
-								<button type="button" class="btn bg-blue-700 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenLaporanKejadian->count(),0,',','.')}}</button>
+								<a href="{{url('data-laporan')}}" class="btn bg-blue-700 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenLaporanKejadian->count(),0,',','.')}}</a>
 								
 							</div>
 						</div>
@@ -18,7 +18,7 @@ $InstrumenAssesment=\App\Models\InstrumenAssesment::all();
 							<div class="panel panel-body border-top-info text-center">
 								<h6 class="no-margin text-semibold">Bantuan Santunan Kematian</h6>
 								
-								<button type="button" class="btn bg-teal-700 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenAssesment->count(),0,',','.')}}</button>
+								<a href="{{url('data-bantuan-santunan')}}" class="btn bg-teal-700 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenAssesment->count(),0,',','.')}}</a>
 								
 							</div>
 						</div>
@@ -26,7 +26,7 @@ $InstrumenAssesment=\App\Models\InstrumenAssesment::all();
 							<div class="panel panel-body border-top-info text-center">
 								<h6 class="no-margin text-semibold">Bantuan Jaminan Hidup</h6>
 								
-								<button type="button" class="btn bg-indigo-400 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenJHPKBS->count(),0,',','.')}}</button>
+								<a href="{{url('data-bantuan-jaminan')}}" class="btn bg-indigo-400 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenJHPKBS->count(),0,',','.')}}</a>
 								
 							</div>
 						</div>
@@ -34,7 +34,7 @@ $InstrumenAssesment=\App\Models\InstrumenAssesment::all();
 							<div class="panel panel-body border-top-info text-center">
 								<h6 class="no-margin text-semibold">Bantuan Bahan Bangunan</h6>
 								
-								<button type="button" class="btn bg-purple-400 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenAssesmentPemulian->count(),0,',','.')}}</button>
+								<a href="{{url('data-bantuan-bahan-bangunan')}}" class="btn bg-purple-400 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">{{number_format($InstrumenAssesmentPemulian->count(),0,',','.')}}</a>
 								
 							</div>
 						</div>

@@ -241,10 +241,27 @@
                                         <h2>Laporan Tidak Disetujui</h2>
                                     </div>  
                                 </div>
-                                
-                            @else    
+                                  
                             @endif
-                                
+                            @if ($data->nodin_kasubdit!=null)
+                                <div class="row" style="padding-left:20px;margin-top:10px;">
+                                    <div class="col-md-4">File Disposisi Kasubdit</div>
+                                    <div class="col-md-1">:</div>
+                                        <div class="col-md-7"><a href="{{url('lihat-dokumen/'.$data->nodin_kasubdit)}}" target="_blank">{{$data->nodin_kasubdit}}</a></div>
+                                </div>
+                            @endif
+                            @if ($data->nodin_kasubdit!=null)
+                                <div class="row" style="padding-left:20px;margin-top:10px;">
+                                    <div class="col-md-4">File Disposisi Direktur</div>
+                                    <div class="col-md-1">:</div>
+                                        <div class="col-md-7"><a href="{{url('lihat-dokumen/'.$data->nodin_direktur)}}" target="_blank">{{$data->nodin_direktur}}</a></div>
+                                </div>
+                                <div class="row" style="padding-left:20px;margin-top:10px;">
+                                    <div class="col-md-4">Disposisi Direktur</div>
+                                    <div class="col-md-1">:</div>
+                                    <div class="col-md-7"><b>{{$data->disposisi_direktur}}</b></div>
+                                </div>
+                            @endif
                         </div>
                     </div>  
                 </div>

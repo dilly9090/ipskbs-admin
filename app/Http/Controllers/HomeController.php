@@ -70,4 +70,9 @@ class HomeController extends Controller
             $cek->save();
         }
     }
+
+    public function lihat_dokumen($dir,$file)
+    {
+        return response()->download(storage_path('app/'.$dir.'/'.$file));
+    }
 }
