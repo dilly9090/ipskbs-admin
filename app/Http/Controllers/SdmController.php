@@ -4,13 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sdm;
+use App\User;
 use Validator;
 class SdmController extends Controller
 {
     public function index()
     {
         $sdm=Sdm::orderBy('nama_lengkap')->get();
-        return view('pages.sdm.index')->with('sdm',$sdm);
+        $user=User::all();
+        $us=array();
+        foreach($user as $v)
+        {
+            $us[$v->id]=$v;
+        }
+        return view('pages.sdm.index')->with('sdm',$sdm)->with('user',$us);
     }
 
     public function store(Request $request)
@@ -85,5 +92,12 @@ class SdmController extends Controller
     public function edit($id)
     {
         return Sdm::find($id);
+    }
+
+    public function sdm_detail($iduser)
+    {
+        $user=User::find($iduser);
+        $sdm=Sdm::where('id_user',$iduser)->first();
+        return view('pages.master.user-data')->with('sdm',$sdm);
     }
 }

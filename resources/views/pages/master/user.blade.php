@@ -85,6 +85,7 @@
                             <th class="text-center">Nama</th>
                             <th>Email</th>
                             <th>Level</th>
+                            <th>Data User</th>
                             <th>Status</th>
                             <th>#</th>
                         </tr>
@@ -96,7 +97,7 @@
                     <tbody>
                         <tr>
                             <td class="text-center">{{$no}}</td>
-                            <td class="text-center">{{$item->name}}</td>
+                            <td class="text-left">{{$item->name}}</td>
                             <td>{{$item->email}}</td>
                             <td>{{$level[$item->level]}}</td>
                             <td>
@@ -107,11 +108,14 @@
                             @endif    
                             </td>
                             <td>
+                                <a href="javascript:detail({{$item->id}})" class="btn btn-xs btn-success btn-aksi" data-title='Detail User' ><i class="icon-eye"></i></a>    
+                            </td>
+                            <td>
                                 <div style="width:100px">
-                                    <a class="btn btn-xs btn-info btn-edit" data-toggle="modal" data-target="#modalubah" data-value="{{ $item->id }}">
+                                    <a class="btn btn-xs btn-info btn-edit btn-aksi" data-toggle="modal" data-title='Edit Data' data-target="#modalubah" data-value="{{ $item->id }}">
                                         <i class="icon-pencil"></i>
                                     </a>
-                                    <a href="#" class="btn btn-xs btn-danger btn-delete" data-toggle="modal" data-target="#modalhapus" data-value="{{ $item->id }}">
+                                    <a href="#" class="btn btn-xs btn-danger btn-delete btn-aksi" data-title='Hapus Data' data-toggle="modal" data-target="#modalhapus" data-value="{{ $item->id }}">
                                         <i class="icon-trash"></i>
                                     </a>  
                                 </div> 
@@ -280,11 +284,32 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal fade" id="modaldetail" tabindex="-1" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Detail Data User</h4>
+				</div>
+				<div class="modal-body">
+                    <form action="#" method="POST" enctype="multipart/form-data" id="edit-detail-user">
+                        @csrf
+					    <div id="data-user"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" data-dismiss="modal" class="btn btn-default">Batal</button>
+					<button type="submit" class="btn btn-info" style="cursor:pointer;">Edit</button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</div>
 @endsection
 @section('footscript')
     <script type="text/javascript" src="{{asset('assets/js/plugins/forms/selects/bootstrap_select.min.js')}}"></script>
     <script>
     $(document).ready(function(){
+        $('.btn-aksi').tooltip();
         $('#table').DataTable();
         $(".selectbox").selectpicker({
             
@@ -315,6 +340,13 @@
         })
         
     });
+    function detail(iduser)
+    {
+        $('#edit-detail-user').attr('action', "{{ url('sdm-detail-simpan') }}/"+iduser);
+        
+        $('#data-user').load('{{url("sdm-detail")}}/'+iduser);
+        $('#modaldetail').modal('show');
+    }
     </script>
 <style>
 .selectbox {

@@ -142,7 +142,7 @@
                                     </div>  
                                 </div>
                                 <div class="col-md-9" style="">
-                                    <a href="{{url('cetak-laporan/'.$data->id)}}" class="btn bg-blue-700 btn-float btn-float-lg legitRipple" style="font-size:30px;width:100%;height:40px;padding-top:5px;" data-popup="tooltip" title="" data-original-title="Cetak Berkas">
+                                    <a href="{{url('cetak-laporan-bs/'.$data->id)}}" class="btn bg-blue-700 btn-float btn-float-lg legitRipple" style="font-size:30px;width:100%;height:40px;padding-top:5px;" data-popup="tooltip" title="" data-original-title="Cetak Berkas">
                                         <i class="icon-printer"></i>
                                     </a>
                                 </div>   
@@ -327,27 +327,27 @@
 <script>
     function verifikasi(id)
     {
-        $('#form-verifikasi').attr('action', "{{ url('data-laporan-verifikasi') }}/"+id)	
+        $('#form-verifikasi').attr('action', "{{ url('data-bantuan-santuan-verifikasi') }}/"+id)	
         $('#modalverifikasi').modal('show');
     }
     function tidaklengkap(id)
     {
-        $('#form-verifikasi').attr('action', "{{ url('data-laporan-tidak-lengkap') }}/"+id)	
+        $('#form-verifikasi').attr('action', "{{ url('data-bantuan-santuan-tidak-lengkap') }}/"+id)	
         $('#modalverifikasi').modal('show');
     }
     function uploadnodin(id)
     {
-        $('#form-upload').attr('action', "{{ url('data-laporan-upload-nodin') }}/"+id)	
+        $('#form-upload').attr('action', "{{ url('data-bantuan-santuan-upload-nodin') }}/"+id)	
         $('#modaluploadnodin').modal('show');
     }
     function uploadsk(id)
     {
-        $('#form-upload-sk').attr('action', "{{ url('data-laporan-upload-sk') }}/"+id)	
+        $('#form-upload-sk').attr('action', "{{ url('data-bantuan-santuan-upload-sk') }}/"+id)	
         $('#modaluploadsk').modal('show');
     }
     function disposisidir(id)
     {
-        $('#form-disposisi').attr('action', "{{ url('data-laporan-disposisi') }}/"+id)	
+        $('#form-disposisi').attr('action', "{{ url('data-bantuan-santuan-disposisi') }}/"+id)	
         $('#modaldisposisi').modal('show');
     }
 </script>

@@ -86,4 +86,52 @@ class UserController extends Controller
         return redirect()->route('master-user.index')
             ->with('success', 'Anda telah menghapus data.');
     }
+
+    public function sdm_detail($iduser)
+    {
+        $user=User::find($iduser);
+        $sdm=Sdm::where('id',$user->id_sdm)->first();
+        // return $user;
+        return view('pages.master.user-data')->with('sdm',$sdm)->with('user',$user);
+    }
+    public function sdm_detail_simpan(Request $request,$iduser)
+    {
+        $user=User::find($iduser);
+
+        $sdm=Sdm::where('id',$user->id_sdm)->first();
+        if($sdm)
+        {
+            $sdm->nip = $request->nip;
+            $sdm->nama_lengkap = $request->nama_lengkap;
+            $sdm->tempat_lahir = $request->tempat_lahir;
+            $sdm->status_pegawai = $request->status_pegawai;
+            $sdm->kedudukan = $request->kedudukan;
+            $sdm->email = $request->email;
+            $sdm->id_user = $iduser;
+            $sdm->save();
+
+            $idsdm=$sdm->id;
+        }
+        else
+        {
+            $insert=new Sdm;
+            $insert->nip = $request->nip;
+            $insert->nama_lengkap = $request->nama_lengkap;
+            $insert->tempat_lahir = $request->tempat_lahir;
+            $insert->status_pegawai = $request->status_pegawai;
+            $insert->kedudukan = $request->kedudukan;
+            $insert->email = $request->email;
+            $insert->id_user = $iduser;
+            $insert->save();
+
+            $idsdm=$insert->id;
+        }
+
+        $user->name=$request->nama_lengkap;
+        $user->email=$request->email;
+        $user->id_sdm=$idsdm;
+        $user->save();
+
+        return redirect('master-user')->with('success','Data Detail User Berhasil Di Perbaharui');
+    }
 }

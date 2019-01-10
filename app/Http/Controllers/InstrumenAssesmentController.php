@@ -42,7 +42,7 @@ class InstrumenAssesmentController extends Controller
         $notif->seen_status  = 0;
         $notif->save();
 
-        return redirect('data-laporan/'.$id)->with('pesan','Data Laporan berhasil Di Verifikasi');
+        return redirect('data-bantuan-santuan/'.$id)->with('pesan','Data Laporan berhasil Di Verifikasi');
     }
     public function data_laporan_tidak_lengkap(Request $request, $id)
     {
@@ -60,7 +60,7 @@ class InstrumenAssesmentController extends Controller
         $notif->seen_status  = 0;
         $notif->save();
 
-        return redirect('data-laporan/'.$id)->with('pesan','Data Laporan berhasil Di Verifikasi');
+        return redirect('data-bantuan-santuan/'.$id)->with('pesan','Data Laporan berhasil Di Verifikasi');
     }
     public function data_laporan_upload_nodin(Request $request, $id)
     {
@@ -82,7 +82,7 @@ class InstrumenAssesmentController extends Controller
         $notif->seen_status  = 0;
         $notif->save();
 
-        return redirect('data-laporan/'.$id)->with('pesan','Nota Dinas Kasubdit Berhasil Di Unggah');
+        return redirect('data-bantuan-santuan/'.$id)->with('pesan','Nota Dinas Kasubdit Berhasil Di Unggah');
     }
     public function data_laporan_upload_sk(Request $request, $id)
     {
@@ -104,7 +104,7 @@ class InstrumenAssesmentController extends Controller
         $notif->seen_status  = 0;
         $notif->save();
 
-        return redirect('data-laporan/'.$id)->with('pesan','SK Direktur Berhasil Di Unggah');
+        return redirect('data-bantuan-santuan/'.$id)->with('pesan','SK Direktur Berhasil Di Unggah');
     }
     public function data_laporan_disposisi(Request $request, $id)
     {
@@ -123,7 +123,7 @@ class InstrumenAssesmentController extends Controller
         $notif->seen_status  = 0;
         $notif->save();
 
-        return redirect('data-laporan/'.$id)->with('pesan','Disposisi Direktur Berhasil Di Tambahkan');
+        return redirect('data-bantuan-santuan/'.$id)->with('pesan','Disposisi Direktur Berhasil Di Tambahkan');
     }
     public function cetak_laporan($id)
     {
