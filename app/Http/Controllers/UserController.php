@@ -66,7 +66,7 @@ class UserController extends Controller
         $insert->name = $request->name;
         $insert->email = $request->email;
         
-        if(!is_null)
+        if($sdm)
             $insert->id_sdm = $sdm->id;
 
         if($request->password!='')
