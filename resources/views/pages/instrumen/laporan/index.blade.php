@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    <title>Instrumen Laporan Kejadian - SIMANDAT</title>
+    <title>Instrumen Laporan Kejadian - iPSKBS</title>
 @endsection
 
 @section('head-section')

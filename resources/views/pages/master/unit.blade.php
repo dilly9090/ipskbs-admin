@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    <title>Unit Kerja - SIMANDAT</title>
+    <title>Unit Kerja - iPSKBS</title>
 @endsection
 
 @section('head-section')

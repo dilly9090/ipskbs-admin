@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    <title>Data User - SIMANDAT</title>
+    <title>Data User - iPSKBS</title>
 @endsection
 
 @section('head-section')

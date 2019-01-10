@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    <title>Data Jenis Kebutuhan - SIMANDAT</title>
+    <title>Data Jenis Kebutuhan - iPSKBS</title>
 @endsection
 
 @section('head-section')

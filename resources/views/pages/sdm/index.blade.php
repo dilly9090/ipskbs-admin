@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('title')
-    <title>SDM - SIMANDAT</title>
+    <title>SDM - iPSKBS</title>
 @endsection
 
 @section('head-section')
