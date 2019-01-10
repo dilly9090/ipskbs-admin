@@ -23,7 +23,7 @@
 								{{-- <li class="{{$path=='sebaran-peta' ? 'active' : ''}}"><a href="{{url('sebaran-peta')}}"><i class="icon-map4"></i> <span>Peta</span></a></li> --}}
 								{{-- <li class="{{$path=='iku' ? 'active' : ''}}"><a href="{{url('iku')}}"><i class="icon-stack2"></i> <span>IKU</span></a></li> --}}
 								<hr>
-								@if (Auth::user()->level==1)
+								@if (Auth::user()->level==0)
 									<li class="{{strpos($path,'master')!==false ? 'active' : ''}}"><a href={{url('master')}}><i class="icon-list"></i> <span>Master Data</span></a></li>
 								@endif
 								<li><a href={{url('logout')}}><i class="icon-switch"></i> <span>Logout</span></a></li>
