@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name'=>'Admin',
             'email'=>'admin@email.com',
-            'level'=>0,
+            // 'level'=>0,
             'password'=>bcrypt('123'),
-            'flag'=>1
+            // 'flag'=>1
         ]);
         // Eloquent::unguard();
         // $path = storage_path('app/db_indonesia_all.sql');

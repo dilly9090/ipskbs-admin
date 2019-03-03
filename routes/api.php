@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('update-token-firebase/{id?}','API\RestApiController@ShowTokenFireBase');
+Route::post('update-token-firebase/{id?}','API\RestApiController@UpdateTokenFireBase');
