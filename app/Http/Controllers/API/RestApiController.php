@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\Notifikasi;
+use App\User;
 class RestApiController extends Controller
 {
     public function ShowTokenFireBase($id)
@@ -21,7 +22,7 @@ class RestApiController extends Controller
         {
 
             $token=$request->token;
-            $notif=Notifikasi::find($id);
+            $notif=User::find($id);
             $notif->token_firebase=$token;
             $notif->save();
             
