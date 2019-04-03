@@ -35,10 +35,11 @@ function sendFCM($title, $message, $firebasedevicetoken)
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_POSTFIELDS => $fields,
       CURLOPT_HTTPHEADER => array(
-        "authorization: key=AIzaSyAhdCpPHn--6nSxUuv-2Bck2OcIO08iejw",
+        "authorization: key=AAAASm7nXdM:APA91bGtcDa6mQvYFNrL_D37-X4r_RVGuUTkHp2ozKAdKczUyt3bAHYfiNfsa5JUVjajRhYl6B3iWehKf12zNYN0nqCOYhaMUqVV0zclhyOpT3AQBJVE7BBCEUEDoLdHAaGqtIzdnu5C",
         "content-type: application/json"
       ),
     ));
+    // "authorization: key=AIzaSyAhdCpPHn--6nSxUuv-2Bck2OcIO08iejw",
     
     $response = curl_exec($curl);
     $err = curl_error($curl);
