@@ -75,4 +75,12 @@ class HomeController extends Controller
     {
         return response()->download(storage_path('app/'.$dir.'/'.$file));
     }
+
+    public function kirim_notif()
+    {
+        $title='Laporan Baru';
+        $message='Anda Telah Mengirimkan Laporan ';
+        $firebasedevicetoken='fBjge_9Z5v4:APA91bFJXPCPHKq0eeZfent0LcfbC8pPEwbpJW_7GxerDboDc20ZsiXxyNsCvMPfF_JfBgkyrxH7h2nGtWUHfb4uSVPcEotD4WsZ_ojMS3gbl2f3wSCx1HB_Vd9VxtzJaNolRzLqWt_o';
+        sendFCM($title, $message, $firebasedevicetoken);
+    }
 }

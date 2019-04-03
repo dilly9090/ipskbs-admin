@@ -81,3 +81,5 @@ Route::get('json_notifikasi/{iduser}','JsonController@json_notifikasi');
  
 Route::get('update-koordinat','HomeController@update_koordinat');
 Route::get('lihat-dokumen/{dir}/{file}','HomeController@lihat_dokumen');
+
+Route::get('kirim-notif','HomeController@kirim_notif');
