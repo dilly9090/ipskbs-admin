@@ -19,3 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('update-token-firebase/{id?}','API\RestApiController@ShowTokenFireBase');
 Route::post('update-token-firebase/{id?}','API\RestApiController@UpdateTokenFireBase');
+
+Route::post('change-password','API\RestApiController@changepassword');
