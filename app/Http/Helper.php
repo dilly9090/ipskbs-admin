@@ -35,7 +35,7 @@ function sendFCM($title, $message, $firebasedevicetoken)
       CURLOPT_CUSTOMREQUEST => "POST",
       CURLOPT_POSTFIELDS => $fields,
       CURLOPT_HTTPHEADER => array(
-        "authorization: key=YOUR_PROJECT_KEY",
+        "authorization: key=AIzaSyAhdCpPHn--6nSxUuv-2Bck2OcIO08iejw",
         "content-type: application/json"
       ),
     ));
