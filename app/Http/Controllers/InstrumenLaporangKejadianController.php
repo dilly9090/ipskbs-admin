@@ -8,6 +8,7 @@ use App\Models\Provinsi;
 use App\Models\Kabupaten;
 use App\Models\Notifikasi;
 use App\Models\Sdm;
+use App\Models\Dokumen;
 use App\User;
 use Auth;
 use PDF;
@@ -24,7 +25,10 @@ class InstrumenLaporangKejadianController extends Controller
     {
         $data=InstrumenLaporanKejadian::find($id);
         $provinsi=Provinsi::all();
-        return view('pages.instrumen.laporan.detail')->with('data',$data)->with('provinsi',$provinsi);
+        $no_laporan=str_replace('#','',$data->no_laporan);
+        $dokumen=Dokumen::where('id_laporan',$no_laporan)->get();
+        // return $dokumen;
+        return view('pages.instrumen.laporan.detail')->with('data',$data)->with('provinsi',$provinsi)->with('dokumen',$dokumen);
     }
 
     public function data_laporan_verifikasi(Request $request, $id)

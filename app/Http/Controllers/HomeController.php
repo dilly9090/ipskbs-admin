@@ -73,7 +73,8 @@ class HomeController extends Controller
 
     public function lihat_dokumen($dir,$file)
     {
-        return response()->download(storage_path('app/'.$dir.'/'.$file));
+        return response()->file(storage_path('app/'.$dir.'/'.$file));
+        // return response()->download(storage_path('app/'.$dir.'/'.$file));
     }
 
     public function kirim_notif()

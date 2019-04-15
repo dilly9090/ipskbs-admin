@@ -244,26 +244,57 @@
                                   
                             @endif
                             @if ($data->nodin_kasubdit!=null)
-                                <div class="row" style="padding-left:20px;margin-top:10px;">
-                                    <div class="col-md-4">File Disposisi Kasubdit</div>
-                                    <div class="col-md-1">:</div>
-                                        <div class="col-md-7"><a href="{{url('lihat-dokumen/'.$data->nodin_kasubdit)}}" target="_blank">{{$data->nodin_kasubdit}}</a></div>
+                                <div class="row" style="padding-left:20px;padding-top:20px;">
+                                    <div class="col-md-5" style="margin-top:20px !important;">File Disposisi Kasubdit</div>
+                                    <div class="col-md-1" style="margin-top:20px !important;">:</div>
+                                        <div class="col-md-6" style="margin-top:20px !important;">
+                                            <a href="{{url('lihat-dokumen/'.$data->nodin_kasubdit)}}" target="_blank"><i class="icon-file-pdf"></i> {{$data->nodin_kasubdit}}</a>
+                                        </div>
                                 </div>
                             @endif
                             @if ($data->nodin_kasubdit!=null)
                                 <div class="row" style="padding-left:20px;margin-top:10px;">
-                                    <div class="col-md-4">File Disposisi Direktur</div>
+                                    <div class="col-md-5">File Disposisi Direktur</div>
                                     <div class="col-md-1">:</div>
-                                        <div class="col-md-7"><a href="{{url('lihat-dokumen/'.$data->nodin_direktur)}}" target="_blank">{{$data->nodin_direktur}}</a></div>
+                                        <div class="col-md-6"><a href="{{url('lihat-dokumen/'.$data->nodin_direktur)}}" target="_blank"> <i class="icon-file-pdf"></i> {{$data->nodin_direktur}}</a></div>
                                 </div>
                                 <div class="row" style="padding-left:20px;margin-top:10px;">
-                                    <div class="col-md-4">Disposisi Direktur</div>
+                                    <div class="col-md-5">Disposisi Direktur</div>
                                     <div class="col-md-1">:</div>
-                                    <div class="col-md-7"><b>{{$data->disposisi_direktur}}</b></div>
+                                    <div class="col-md-12"><b>{{$data->disposisi_direktur}}</b></div>
                                 </div>
                             @endif
                         </div>
                     </div>  
+                </div>
+                <div class="row">
+                    @if ($dokumen->count()!=0)
+                        @foreach ($dokumen as $item)
+                            @php
+                                $jenis=str_replace('btnUpload','',$item->jenis_dokumen);
+                                if($jenis=='DokumentsiKejadian')
+                                    $jns=str_replace('DokumentsiKejadian','Dokumentasi<br>Kejadian',$jenis);
+                                elseif($jenis=='DataKorban')
+                                    $jns=str_replace('DataKorban','Data<br>Korban',$jenis);
+                                else
+                                    $jns=$jenis;
+
+                                $nm=$item->jenis_dokumen.'_'.$item->id_laporan.'_'.$item->nama_dokumen;
+                                $urlfile='https://pskbs.id/php/uploads/'.$nm;
+                            @endphp
+                            <div class="col-md-2">
+                                <div class="panel panel-body border-top-info text-center">
+                                    <h6 class="no-margin text-semibold">{!!$jns!!}</h6>
+                                    
+                                    <a href="{{$urlfile}}" target="_blank" class="btn bg-purple-400 btn-float btn-float-lg legitRipple" style="margin-top:20px;font-size:30px">
+                                        <i class="icon-stack"></i>
+                                    </a>
+                                    
+                                </div>
+                            </div> 
+                        @endforeach
+                    @endif
+                        
                 </div>
             </div>
         </div>
